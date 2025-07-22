@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ClickPlayButton()
     {
-        
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ClickSettingsButton()
     {
-        
+    }
+    public void ClickExitButton()
+    {
+        Application.Quit();
     }
 }
