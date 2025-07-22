@@ -25,6 +25,7 @@ public class Parallax : MonoBehaviour
     void Update()
     {
         offset = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        offset.y = 0.0f;
 
         for (int i = 0; layers.Length > i; i++) 
         {

@@ -20,6 +20,5 @@ public enum CardType
 {
     Attack,
     Skill,
-    Power,
-    Special
+    Passive
 }
