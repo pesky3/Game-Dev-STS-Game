@@ -7,12 +7,17 @@ public abstract class Entity : MonoBehaviour
     public int currentHealth;
 
 
-    protected virtual void TakeDamage()
+    public virtual void TakeDamage(int damage)
     {
         
     }
 
     protected virtual void ReceiveHealing()
+    {
+
+    }
+
+    protected virtual void Die()
     {
 
     }
