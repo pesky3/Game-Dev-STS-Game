@@ -1,16 +1,40 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Stats stats; //to be assigned later through inspector
+
+    void Awake()
     {
-        
+        entityName = stats.EntityName;
+        maxHealth = stats.MaxHealth;
+        baseStrength = stats.BaseStrength;
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void TakeDamage(int damage)
     {
-        
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
+
+    public override void ReceiveHealing(int heal)
+    {
+        currentHealth += heal;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    protected override void Die()
+    {
+        Destroy(gameObject);
+    }
+
+
+
 }

@@ -5,6 +5,7 @@ public abstract class Entity : MonoBehaviour
     public string entityName;
     public int maxHealth;
     public int currentHealth;
+    public int baseStrength;
 
 
     public virtual void TakeDamage(int damage)
@@ -12,7 +13,7 @@ public abstract class Entity : MonoBehaviour
         
     }
 
-    protected virtual void ReceiveHealing()
+    public virtual void ReceiveHealing(int heal)
     {
 
     }
