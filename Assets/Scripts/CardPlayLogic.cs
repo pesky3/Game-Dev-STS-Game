@@ -5,17 +5,28 @@ public class CardPlayLogic : MonoBehaviour
     private Player player;
     private Enemy selectedEnemy;
     //singleton implementation for this clas 
-    private CardPlayLogic cardManager;
-    public CardPlayLogic CardManager
+    private static CardPlayLogic cardManager;
+
+    public Enemy SelectedEnemy
+    {
+        get { return selectedEnemy; }
+        set { selectedEnemy = value; }
+    }
+    public static CardPlayLogic CardManager
     {
         get { return cardManager; }
     }
 
-    public void SelectEnemy(Enemy enemy)
+    void Awake()
     {
-        CardManager.selectedEnemy = enemy;
-    }
+        if (cardManager != null && cardManager != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        cardManager = this;
+    }
 
     public void PlayCard(Card card)
     {
@@ -28,7 +39,7 @@ public class CardPlayLogic : MonoBehaviour
 
             if (card.TypeCard == Card.CardType.Healing)
             {
-
+                player.ReceiveHealing(1);
             }
 
             if (card.TypeCard == Card.CardType.Utility)
