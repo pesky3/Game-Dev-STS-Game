@@ -5,10 +5,12 @@ public class Stats : ScriptableObject
 {
     [SerializeField] private string entityName;
     [SerializeField] private int maxHealth;
-    [SerializeField] private int baseStrength;
+    [SerializeField] private float baseStrength;
+    [SerializeField] private int maxMana;
 
     public string EntityName { get => entityName; }
     public int MaxHealth { get => maxHealth; }
-    public int BaseStrength { get => baseStrength; }
+    public float BaseStrength { get => baseStrength; }
+    public int MaxMana { get => maxMana; }
 
 }

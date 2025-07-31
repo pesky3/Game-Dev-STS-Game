@@ -3,12 +3,16 @@ using UnityEngine;
 public class Player : Entity
 {
     public Stats stats; //to be assigned later through inspector
+    public int maxMana;
+    public int currentMana;
 
-    void Awake()
+    void Start()
     {
         entityName = stats.EntityName;
         maxHealth = stats.MaxHealth;
         baseStrength = stats.BaseStrength;
+        maxMana = stats.MaxMana;
+        currentMana = maxMana;
         currentHealth = maxHealth;
     }
 

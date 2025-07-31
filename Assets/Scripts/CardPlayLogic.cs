@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CardPlayLogic : MonoBehaviour
 {
+    private Player player;
     private Enemy selectedEnemy;
     //singleton implementation for this clas 
     private CardPlayLogic cardManager;
@@ -18,19 +19,22 @@ public class CardPlayLogic : MonoBehaviour
 
     public void PlayCard(Card card)
     {
-        if (card.TypeCard == Card.CardType.Attack)
+        if (player.currentMana >= card.ManaCost)
         {
-            CardManager.selectedEnemy.TakeDamage(1);
-        }
+            if (card.TypeCard == Card.CardType.Attack)
+            {
+                CardManager.selectedEnemy.TakeDamage((int)(card.PowerScaling * player.baseStrength));
+            }
 
-        if (card.TypeCard == Card.CardType.Healing)
-        {
+            if (card.TypeCard == Card.CardType.Healing)
+            {
 
-        }
+            }
 
-        if (card.TypeCard == Card.CardType.Utility)
-        {
-        
+            if (card.TypeCard == Card.CardType.Utility)
+            {
+
+            }
         }
     }
 }
