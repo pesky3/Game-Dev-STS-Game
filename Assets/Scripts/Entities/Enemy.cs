@@ -7,9 +7,11 @@ public class Enemy : Entity
     void Start()
     {
         entityName = stats.EntityName;
-        maxHealth = stats.MaxHealth;
-        baseStrength = stats.BaseStrength;
+        maxHealth = Mathf.RoundToInt(stats.MaxHealth * Difficulty.EnemyDifficultyMultipliers().healthMultiplier);
+        baseStrength = stats.BaseStrength * Difficulty.EnemyDifficultyMultipliers().strengthMultiplier;
         currentHealth = maxHealth;
+
+
     }
     public override void TakeDamage(int damage)
     {

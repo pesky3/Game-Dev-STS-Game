@@ -34,7 +34,7 @@ public class CardPlayLogic : MonoBehaviour
         {
             if (card.TypeCard == Card.CardType.Attack)
             {
-                CardManager.selectedEnemy.TakeDamage((int)(card.PowerScaling * player.baseStrength));
+                cardManager.selectedEnemy.TakeDamage((int)(card.PowerScaling * player.baseStrength));
             }
 
             if (card.TypeCard == Card.CardType.Healing)
