@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card")]
+[CreateAssetMenu(menuName = "Card")] //this is done so I can easily make cards in  the editor with different stats
 
 public class Card : ScriptableObject
 {
