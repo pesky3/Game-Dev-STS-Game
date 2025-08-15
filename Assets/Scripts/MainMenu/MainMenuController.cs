@@ -1,12 +1,13 @@
 using UnityEngine;
-using static Difficulty;
+using UnityEngine.SceneManagement;
+
 
 public class MainMenuController : MonoBehaviour
 {
     public GameObject difficultyMenu;
     public void ClickPlayButton()
     {
-        
+        SceneManager.LoadScene(1);
     }
     public void ClickSettingsButton()
     {
@@ -24,11 +25,13 @@ public class MainMenuController : MonoBehaviour
 
     public void ClickHardMode()
     {
-        Difficulty.DifficultySetting = DifficultyEnum.Hard;
+        Difficulty.DifficultySetting = Difficulty.DifficultyEnum.Hard;
+        Debug.Log(Difficulty.DifficultySetting);
     }
 
     public void ClickNormalMode()
     {
-        Difficulty.DifficultySetting = DifficultyEnum.Normal;
+        Difficulty.DifficultySetting = Difficulty.DifficultyEnum.Normal;
+        Debug.Log(Difficulty.DifficultySetting);
     }
 }
