@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy : Entity
 {
     public Stats stats;
+    public HealthTextUpdate healthUI;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class Enemy : Entity
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthUI.UpdateHealth();
         if (currentHealth <= 0)
         {
             Die();
@@ -25,6 +27,7 @@ public class Enemy : Entity
     public override void ReceiveHealing(int heal)
     {
         currentHealth += heal;
+        healthUI.UpdateHealth();
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;

@@ -7,15 +7,8 @@ public class SelectorLogic : MonoBehaviour
     {
         CardPlayLogic.CardManager.SelectedEnemy = enemy;
     }
-    void Update()
-    {
-        
-    }
     
-    public void OnMouseOver()
-    {
-        
-    }
+
 
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -24,10 +17,7 @@ public class SelectorLogic : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (CardPlayLogic.CardManager.SelectedEnemy != null)
-        {
-            //CardPlayLogic.PlayCard();
-        }
+        
     }
 }
 

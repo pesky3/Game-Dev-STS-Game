@@ -5,6 +5,7 @@ public class Player : Entity
     public Stats stats; //to be assigned later through inspector
     public int maxMana;
     public int currentMana;
+    public HealthTextUpdate healthUI;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Player : Entity
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthUI.UpdateHealth();
         if (currentHealth <= 0)
         {
             Die();
@@ -28,6 +30,7 @@ public class Player : Entity
     public override void ReceiveHealing(int heal)
     {
         currentHealth += heal;
+        healthUI.UpdateHealth();
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
