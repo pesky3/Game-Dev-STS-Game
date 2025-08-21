@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Strong Attack
   m_EditorClassIdentifier: 
   cardName: Strong Attack
-  cardDesc: Deals Damage.
+  cardDesc: Deals More Damage.
   manaCost: 2
-  powerScaling: 2
+  powerScaling: 4
   cardSprite: {fileID: -8262534425414574923, guid: 84adcdbf3864329448aba2ae6ba304bc, type: 3}
   typeCard: 0

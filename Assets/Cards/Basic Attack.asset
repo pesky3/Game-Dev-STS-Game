@@ -15,6 +15,6 @@ MonoBehaviour:
   cardName: Basic Attack
   cardDesc: Deals Damage.
   manaCost: 1
-  powerScaling: 0.7
+  powerScaling: 1
   cardSprite: {fileID: -9189360918760566210, guid: 3eb56363391f50c419415c4b97b6ec6b, type: 3}
   typeCard: 0

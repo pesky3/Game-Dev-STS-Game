@@ -2,16 +2,12 @@ using UnityEngine;
 
 public class CardPlayLogic : MonoBehaviour
 {
-    private Player player;
-    private Enemy selectedEnemy;
+    public Player player;
+    public Enemy selectedEnemy;
     //singleton implementation for this class to ensure that every class can access the same reference to this class
     private static CardPlayLogic cardManager;
 
-    public Enemy SelectedEnemy
-    {
-        get { return selectedEnemy; }
-        set { selectedEnemy = value; }
-    }
+
     public static CardPlayLogic CardManager
     {
         get { return cardManager; }

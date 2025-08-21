@@ -25,6 +25,7 @@ public class Deck : MonoBehaviour
 
         GameObject card = Instantiate(prefabCard, handArea); // Apparently putting a transform in the Instantiate method will tell unity that that gameobject would be the parent of the instantiated Object;
         PrefabController controller = card.GetComponent<PrefabController>(); //getting the prefab PrefabController Script
+        controller.card = hand[hand.Count - 1];
         controller.cardSetup(hand[hand.Count-1]); // hand.Count-1 is the last index in the list aka the most recent one.
         cardCount = hand.Count; //checking how many cards are in hand
 

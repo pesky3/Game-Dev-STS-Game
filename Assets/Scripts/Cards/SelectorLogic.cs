@@ -1,23 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SelectorLogic : MonoBehaviour
+public class SelectorLogic : MonoBehaviour, IPointerClickHandler
 {
-    public void SelectEnemy(Enemy enemy)
+    private Card card;
+    private PrefabController prefabController;
+    public void OnPointerClick(PointerEventData eventData)
     {
-        CardPlayLogic.CardManager.SelectedEnemy = enemy;
-    }
-    
-
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        CardPlayLogic.CardManager.SelectedEnemy = null;
-    }
-
-    public void OnMouseDown()
-    {
-        
+        prefabController = GetComponent<PrefabController>();
+        card = prefabController.card;
+        CardPlayLogic.CardManager.PlayCard(card);
     }
 }
 

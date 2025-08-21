@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PrefabController : MonoBehaviour
 {
+    public Card card;
     public TMP_Text manaText;
     public TMP_Text nameText;
     public TMP_Text descriptionText;
