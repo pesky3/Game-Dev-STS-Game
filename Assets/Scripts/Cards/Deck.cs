@@ -10,11 +10,13 @@ public class Deck : MonoBehaviour
 
     public Transform handArea;
     public GameObject prefabCard;
+    public float cardSpacing;
+    private int cardCount = 0;
 
     public void Start()
     {
-        drawPile = new List<Card>(startingDeck);
-        Shuffle(drawPile);
+        drawPile = new List<Card>(startingDeck); 
+        Shuffle(drawPile); //draw pile randomised but still have the same cards as the deck to start
     }
     public void DrawCard()
     {
@@ -22,6 +24,14 @@ public class Deck : MonoBehaviour
         drawPile.RemoveAt(0); // draw pile depletes that card
 
         GameObject card = Instantiate(prefabCard, handArea); // Apparently putting a transform in the Instantiate method will tell unity that that gameobject would be the parent of the instantiated Object;
+        PrefabController controller = card.GetComponent<PrefabController>(); //getting the prefab PrefabController Script
+        controller.cardSetup(hand[hand.Count-1]); // hand.Count-1 is the last index in the list aka the most recent one.
+        cardCount = hand.Count; //checking how many cards are in hand
+
+
+        card.transform.localPosition = new Vector2(cardCount * cardSpacing, 0); //hand card count check is used here to space the instantiated cards based on hand count
+
+        
 
     }
 
