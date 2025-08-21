@@ -15,6 +15,7 @@ public class Player : Entity
         maxMana = stats.MaxMana;
         currentMana = maxMana;
         currentHealth = maxHealth;
+        healthUI.UpdateHealth();
     }
 
     public override void TakeDamage(int damage)

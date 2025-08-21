@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 
 public class MainMenuController : MonoBehaviour
-{
+{   
     public GameObject difficultyMenu;
+    public MenuTextUpdate menuText;
     public void ClickPlayButton()
     {
         SceneManager.LoadScene(1);
@@ -26,12 +27,12 @@ public class MainMenuController : MonoBehaviour
     public void ClickHardMode()
     {
         Difficulty.DifficultySetting = Difficulty.DifficultyEnum.Hard;
-        Debug.Log(Difficulty.DifficultySetting);
+        menuText.UpdateText();
     }
 
     public void ClickNormalMode()
     {
         Difficulty.DifficultySetting = Difficulty.DifficultyEnum.Normal;
-        Debug.Log(Difficulty.DifficultySetting);
+        menuText.UpdateText();
     }
 }

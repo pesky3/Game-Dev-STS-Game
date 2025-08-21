@@ -11,7 +11,7 @@ public class Enemy : Entity
         maxHealth = Mathf.RoundToInt(stats.MaxHealth * Difficulty.EnemyDifficultyMultipliers().healthMultiplier);
         baseStrength = stats.BaseStrength * Difficulty.EnemyDifficultyMultipliers().strengthMultiplier;
         currentHealth = maxHealth;
-
+        healthUI.UpdateHealth();
 
     }
     public override void TakeDamage(int damage)
