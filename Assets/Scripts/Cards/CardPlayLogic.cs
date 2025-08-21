@@ -4,7 +4,7 @@ public class CardPlayLogic : MonoBehaviour
 {
     private Player player;
     private Enemy selectedEnemy;
-    //singleton implementation for this clas 
+    //singleton implementation for this class to ensure that every class can access the same reference to this class
     private static CardPlayLogic cardManager;
 
     public Enemy SelectedEnemy
